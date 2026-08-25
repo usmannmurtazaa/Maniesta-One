@@ -1,22 +1,51 @@
 /* ============================================
-   Maniesta One - Responsive Styles
+   Maniesta One - Responsive Styles (Complete)
    ============================================ */
 
-/* Large Desktop 1440px+ */
+/* ==========================================
+   Large Desktop: 1440px and above
+   ========================================== */
 @media (min-width: 1440px) {
     :root {
         --space-section: 10rem;
+        --container-max-width: 1280px;
     }
     .hero-title {
         font-size: 6rem;
     }
+    .hero-device {
+        max-width: 550px;
+    }
+    .showcase-device {
+        max-width: 650px;
+        height: 420px;
+    }
 }
 
-/* Desktop 1024px - 1439px */
+/* ==========================================
+   Desktop: 1200px - 1439px
+   ========================================== */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    .hero-subtitle {
+        font-size: 2.2rem;
+    }
+}
+
+/* ==========================================
+   Laptop/Small Desktop: 1024px - 1199px
+   ========================================== */
 @media (max-width: 1199px) {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
     .hero-text {
         align-items: center;
@@ -28,53 +57,171 @@
         justify-content: center;
     }
     .hero-visual {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
+    .hero-device {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    /* Features: single column */
     .features-layout {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
+    .features-controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .features-display {
+        min-height: 300px;
+    }
+    
+    /* Footer */
     .footer-top {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Tablet 768px - 1023px */
+/* ==========================================
+   Tablet: 768px - 1023px
+   ========================================== */
 @media (max-width: 1023px) {
+    /* Navigation */
     .nav-links {
+        display: none;
+    }
+    .nav-actions .btn {
         display: none;
     }
     .nav-toggle {
         display: flex;
     }
+    
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 4rem;
+    }
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-title {
+        font-size: 4rem;
+    }
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+    .hero-device {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* Storytelling */
     .storytelling-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     .storytelling-sticky {
-        height: auto;
         position: static;
+        height: auto;
+        display: block;
     }
     .storytelling-visual {
         position: relative;
         transform: none;
-        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 2rem;
     }
     .storytelling-steps {
         gap: 1.5rem;
+        padding: 0;
     }
+    .story-step {
+        padding: 1.5rem;
+    }
+    .story-step h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Product Showcase */
+    .showcase-viewport {
+        min-height: 400px;
+    }
+    .showcase-device {
+        max-width: 500px;
+        height: 320px;
+    }
+    .showcase-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Features */
+    .features-controls {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .feature-btn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Comparison */
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    .comparison-header > div,
+    .comparison-row > div {
+        padding: 0.8rem;
+    }
+    
+    /* Gallery */
     .gallery-item {
         width: 280px;
         height: 200px;
     }
+    
+    /* Experience */
+    .experience-screen {
+        aspect-ratio: 16/10;
+    }
+    
+    /* Footer */
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-/* Mobile Large 425px - 767px */
+/* ==========================================
+   Mobile Large: 425px - 767px
+   ========================================== */
 @media (max-width: 767px) {
     :root {
         --space-section: 5rem;
         --space-2xl: 3rem;
+        --space-xl: 2rem;
     }
     .container {
-        padding: 0 1rem;
+        padding: 0 1.25rem;
+    }
+    
+    /* Hero */
+    .hero {
+        padding-top: 90px;
+        padding-bottom: 3rem;
     }
     .hero-title {
         font-size: 3rem;
@@ -84,39 +231,136 @@
     }
     .hero-description {
         font-size: 1rem;
+        max-width: 100%;
+    }
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .hero-cta .btn {
+        width: 100%;
+    }
+    .hero-device {
+        max-width: 350px;
     }
     .btn-large {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
-    .hero-device {
-        max-width: 350px;
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+    
+    /* Storytelling */
+    .storytelling-steps {
+        gap: 1.2rem;
+    }
+    .story-step {
+        padding: 1.2rem;
+    }
+    .story-step h2 {
+        font-size: 1.3rem;
+    }
+    .story-step p {
+        font-size: 0.95rem;
+    }
+    
+    /* Product Showcase */
+    .showcase-tabs {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .showcase-tab {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
     }
     .showcase-viewport {
-        min-height: 350px;
-    }
-    .showcase-device {
-        height: 250px;
-    }
-    .features-display {
-        padding: 2rem;
         min-height: 300px;
     }
-    .feature-btn {
-        padding: 1rem;
-        font-size: 1rem;
+    .showcase-device {
+        max-width: 400px;
+        height: 250px;
+    }
+    .showcase-ui-front::after {
+        font-size: 1.5rem;
+    }
+    
+    /* Features */
+    .features-controls {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .features-display {
+        padding: 1.5rem;
+        min-height: 250px;
+    }
+    .feature-panel h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Comparison */
+    .comparison-table {
+        font-size: 0.8rem;
     }
     .comparison-header > div,
     .comparison-row > div {
-        padding: 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Gallery */
+    .gallery-item {
+        width: 250px;
+        height: 180px;
+    }
+    .gallery-controls {
+        gap: 0.5rem;
+    }
+    .gallery-prev,
+    .gallery-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    /* Experience */
+    .experience-screen {
+        aspect-ratio: 4/3;
+    }
+    
+    /* CTA */
+    .cta-content {
+        padding: 2rem 1rem;
+    }
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    .cta-content .btn {
+        display: block;
+        margin: 0.5rem auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Footer */
+    .footer-top {
+        gap: 1.5rem;
     }
     .footer-links {
         grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    .footer-bottom {
+        font-size: 0.8rem;
     }
 }
 
-/* Mobile Small 320px - 424px */
+/* ==========================================
+   Mobile Small: 320px - 424px
+   ========================================== */
 @media (max-width: 424px) {
     .hero-title {
         font-size: 2.5rem;
@@ -125,27 +369,58 @@
         font-size: 1.5rem;
     }
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     .hero-cta {
-        flex-direction: column;
-        width: 100%;
-    }
-    .hero-cta .btn {
-        width: 100%;
+        max-width: 100%;
     }
     .nav-actions .btn {
-        display: none; /* Hide Get Started on very small, rely on mobile menu */
+        display: none;
     }
+    
+    /* Storytelling */
+    .storytelling-visual {
+        max-width: 100%;
+    }
+    
+    /* Showcase */
+    .showcase-device {
+        height: 200px;
+    }
+    
+    /* Gallery */
     .gallery-item {
-        width: 240px;
-        height: 170px;
+        width: 220px;
+        height: 160px;
     }
-    .comparison-header > div:first-child,
-    .comparison-row > div:first-child {
-        font-size: 0.8rem;
+    
+    /* Comparison: make horizontally scrollable on very small screens */
+    .comparison-table {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
     }
+    .comparison-header,
+    .comparison-row {
+        min-width: 400px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    .comparison-header > div,
+    .comparison-row > div {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Footer */
     .footer-links {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .footer-column h4 {
+        font-size: 0.9rem;
+    }
+    .footer-column a {
+        font-size: 0.85rem;
     }
 }
