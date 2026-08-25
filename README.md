@@ -1,86 +1,168 @@
-# Maniesta One — Premium Product Landing Page
+<br />
+<div align="center">
+  <img src="assets/icons/favicon.svg" alt="Maniesta One Logo" width="80" height="80">
 
-A premium responsive product landing page inspired by modern Apple product pages, built with HTML5, CSS3, and vanilla JavaScript ES modules. This project is part of the Maniesta project series and demonstrates advanced frontend techniques including scroll-driven storytelling, interactive feature showcases, microinteractions, responsive design, accessibility, and performance optimization.
+  <h1 align="center">Maniesta One</h1>
 
-## Features
+  <p align="center">
+    A premium responsive product landing page inspired by modern Apple design.
+    <br />
+    Built with pure HTML, CSS & vanilla JavaScript — no frameworks.
+    <br />
+    <br />
+    <a href="https://maniestaone.netlify.app" target="_blank">View Demo</a>
+    ·
+    <a href="https://github.com/usmannmurtazaa/maniesta-one" target="_blank">Report Bug</a>
+    ·
+    <a href="https://github.com/usmannmurtazaa/maniesta-one" target="_blank">Request Feature</a>
+  </p>
+</div>
 
-- **Premium UI/UX**: Minimal, elegant, high-contrast design with strong typography and precise spacing.
-- **Scroll Storytelling**: A sticky section where the product visual changes as the user scrolls through feature descriptions.
-- **Interactive Feature Section**: Tabs that dynamically update a central device mockup.
-- **Product Showcase**: Multiple visual perspectives (front, side, detail, interface, accessories) via tabs.
-- **Gallery**: Horizontal scrolling gallery with lightbox and keyboard support.
-- **Experience Section**: Animated UI mockup with play button.
-- **Custom Cursor**: Subtle custom cursor on desktop only.
-- **Responsive Design**: Optimized for viewports from 320px to 1920px.
-- **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation, visible focus, reduced motion support.
-- **SEO**: Meta tags, Open Graph, canonical URL, favicon.
-- **Performance**: GPU-friendly animations, lazy loading, SVG icons, no external dependencies except Google Fonts.
+<!-- BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Responsive-Yes-brightgreen?style=for-the-badge" alt="Responsive">
+  <img src="https://img.shields.io/badge/Accessibility-Yes-blue?style=for-the-badge" alt="Accessible">
+  <img src="https://img.shields.io/badge/Performance-Optimized-9cf?style=for-the-badge" alt="Performance">
+</p>
 
-## Tech Stack
+---
 
-- HTML5
-- CSS3 (custom properties, grid, flexbox, animations)
-- Vanilla JavaScript ES Modules
-- No frameworks, no backend
+## 📖 About The Project
 
-## Design Approach
+**Maniesta One** is a fictional premium smart productivity device. This landing page showcases its design, features, and interactive experience using advanced frontend techniques:
 
-The design language is inspired by Apple's product pages: large typography, generous whitespace, dark background with a controlled accent color (#6C5CE7 to #00C2FF gradient). The layout uses a 12-column grid on desktop and collapses to single column on mobile. CSS variables define the entire color, typography, and spacing system.
+- Scroll‑driven storytelling
+- Interactive feature showcase
+- Product gallery with lightbox
+- Cinematic experience section
+- Microinteractions & custom cursor
+- Fully responsive (320px → 1920px)
+- Accessible & performant
 
-## Animation System
+The goal is to deliver a **pixel‑perfect, Apple‑inspired** product page without copying any proprietary assets.
 
-- **Entrance animations**: Elements with `data-animate` attributes fade/slide/scale in when they enter the viewport using IntersectionObserver.
-- **Scroll storytelling**: Each story step activates as it scrolls into view, updating the sticky visual.
-- **Microinteractions**: Buttons, cards, and navigation items have hover/press effects.
-- **Hero parallax**: The hero device tilts subtly based on mouse position (desktop only).
-- **Custom cursor**: A dot and ring follow the mouse with smooth easing; the ring expands on interactive elements.
-- **Reduced motion**: All animations are disabled or minimized for users who prefer reduced motion.
+---
 
-## Responsive Strategy
+## ✨ Features
 
-- Mobile-first CSS with breakpoints at 424px, 767px, 1023px, 1199px, and 1440px.
-- Navigation converts to an animated drawer on mobile.
-- Hero and feature layouts stack vertically.
-- Gallery becomes a horizontally scrollable snap container on all devices.
-- Touch targets are at least 44px where practical.
+- **Hero Section** with parallax, floating device, and animated CTA
+- **Sticky Scroll Storytelling** – the product visual updates as you scroll
+- **Interactive Feature Tabs** – click a feature, see the UI change
+- **Product Showcase** – multiple angles (front, side, detail, interface, accessories)
+- **Gallery** – horizontal snap scroll + lightbox with keyboard support
+- **Experience Mockup** – animated UI with play button
+- **Comparison Table** – why upgrade to Maniesta One
+- **Custom Cursor** – subtle dot + ring (desktop only)
+- **Mobile Drawer Navigation** – animated and accessible
+- **Back to Top** button, smooth scrolling, active nav highlighting
+- **SEO & Open Graph** meta tags
+- **Reduced Motion** support for accessibility
 
-## Project Structure
+---
+
+## 🛠 Tech Stack
+
+- **HTML5** – semantic markup
+- **CSS3** – custom properties, grid, flexbox, animations
+- **JavaScript (ES Modules)** – modular, vanilla, no dependencies
+- **Google Fonts** – Inter for typography
+- **SVG** – icons and favicon
+
+No React, no Vue, no build tools, no backend.
+
+---
+
+## 🎨 Design Approach
+
+- **Color System** – near‑black background with one controlled accent gradient (`#6C5CE7` → `#00C2FF`)
+- **Typography** – Inter with large display sizes and clear hierarchy
+- **Spacing** – generous whitespace, precise grid alignment
+- **Animations** – GPU‑friendly `transform` + `opacity`, IntersectionObserver based reveals
+- **Responsive** – mobile‑first, redesigned layouts for smaller screens
+
+---
+
+## 🚀 Quick Start
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/usmannmurtazaa/maniesta-one.git
+   ```
+
+2. **Open with a local server** (ES modules require HTTP, not `file://`)
+   ```bash
+   cd maniesta-one
+   npx serve
+   # or
+   python -m http.server 8000
+   ```
+
+3. Visit `http://localhost:8000` (or the port shown).
+
+That’s it — no dependencies to install.
+
+---
+
+## 📁 Project Structure
+
 ```
 maniesta-one/
-├── index.html
+├── index.html              # Main entry point
 ├── css/
-│ ├── style.css # Base styles, variables, reset
-│ ├── components.css # Buttons, nav, hero, sections
-│ ├── animations.css # Keyframes and animation utilities
-│ └── responsive.css # Media queries
+│   ├── style.css           # Variables, reset, base styles
+│   ├── components.css      # Buttons, nav, sections
+│   ├── animations.css      # Keyframes, animation utilities
+│   └── responsive.css      # Media queries
 ├── js/
-│ ├── app.js # Entry point
-│ ├── navigation.js # Sticky nav, mobile menu, smooth scroll
-│ ├── animations.js # Scroll reveals, storytelling, parallax, cursor
-│ └── interactions.js # Tabs, gallery, lightbox, experience
+│   ├── app.js              # Entry point
+│   ├── navigation.js       # Sticky nav, mobile menu, smooth scroll
+│   ├── animations.js       # Scroll reveals, storytelling, parallax, cursor
+│   └── interactions.js     # Tabs, gallery, lightbox, experience
 ├── assets/
-│ └── icons/
-│ └── favicon.svg
+│   └── icons/
+│       └── favicon.svg
 ├── README.md
 └── .gitignore
 ```
 
-## Local Setup
+---
 
-1. Clone the repository.
-2. Open `index.html` with a local server (e.g., Live Server in VS Code, `npx serve`, or Python's `http.server`).
-   ES modules require serving over HTTP(S), not `file://`.
-3. No build step or dependencies required.
+## 🌐 Deployment
 
-## Deployment
+The project is **Netlify‑ready**. Simply:
 
-The project is ready for Netlify. Simply drag-and-drop the folder or connect the GitHub repository. The `index.html` is the entry point, and all paths are relative.
+1. Push to GitHub
+2. Import the repository into Netlify
+3. Set build command: (leave empty)
+4. Publish directory: `/`
+5. Deploy!
 
-## Author
+The site will be live in seconds.
 
-- **Mani** — [Portfolio](https://mani.dev)
-- Built as part of the Maniesta project series.
+---
 
-## License
+## 📸 Screenshots
 
-Educational project. Not affiliated with Apple Inc.
+> Add your own screenshots here (desktop and mobile recommended).
+
+| Desktop Hero | Mobile Navigation | Gallery |
+|--------------|-------------------|---------|
+| ![Hero](screenshots/hero.png) | ![Mobile](screenshots/mobile.png) | ![Gallery](screenshots/gallery.png) |
+
+---
+
+## 🙌 Author
+
+**Usman Murtaza**  
+- Portfolio: [https://usmanmurtaza.netlify.app/](https://usmanmurtaza.netlify.app/)  
+- Built as part of the **Maniesta** project series.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.  
+*This is an educational project, not affiliated with Apple Inc.*
