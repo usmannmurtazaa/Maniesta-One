@@ -15,7 +15,7 @@ export function initAnimations() {
     });
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Storytelling section: sticky scroll interaction
+    // Storytelling section: sticky scroll interaction with online images
     const storytellingSteps = document.querySelectorAll('.story-step');
     const storytellingVisual = document.getElementById('storytelling-visual');
     const storytellingScreenContent = document.getElementById('storytelling-screen-content');
@@ -42,35 +42,74 @@ export function initAnimations() {
     function updateStorytellingVisual(step) {
         const content = storytellingScreenContent;
         if (!content) return;
+
+        // Online images for each step
         const messages = {
             '1': {
                 title: 'Intelligence',
                 desc: 'Adaptive UI that learns your flow.',
-                bg: 'linear-gradient(135deg, #6c5ce7, #00c2ff)'
+                image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop',
+                overlay: 'linear-gradient(135deg, rgba(108,92,231,0.7), rgba(0,194,255,0.5))'
             },
             '2': {
                 title: 'Focus',
                 desc: 'Distraction-free environment.',
-                bg: 'linear-gradient(135deg, #2d3436, #636e72)'
+                image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop',
+                overlay: 'linear-gradient(135deg, rgba(45,52,54,0.8), rgba(99,110,114,0.6))'
             },
             '3': {
                 title: 'Smart Notes',
                 desc: 'AI organized, instantly synced.',
-                bg: 'linear-gradient(135deg, #fdcb6e, #e17055)'
+                image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=1200&auto=format&fit=crop',
+                overlay: 'linear-gradient(135deg, rgba(253,203,110,0.7), rgba(225,112,85,0.6))'
             },
             '4': {
                 title: 'Adaptive',
                 desc: 'Interface morphs to your task.',
-                bg: 'linear-gradient(135deg, #00cec9, #0984e3)'
+                image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200&auto=format&fit=crop',
+                overlay: 'linear-gradient(135deg, rgba(0,206,201,0.7), rgba(9,132,227,0.6))'
             }
         };
+
         const msg = messages[step];
         if (msg) {
             content.innerHTML = `
-                <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">${msg.title}</h3>
-                <p style="color: #a1a1a6;">${msg.desc}</p>
+                <div style="
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('${msg.image}');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    padding: 2rem;
+                ">
+                    <div style="
+                        position: absolute;
+                        inset: 0;
+                        background: ${msg.overlay};
+                        border-radius: 16px;
+                    "></div>
+                    <h3 style="
+                        font-size: 1.5rem;
+                        margin-bottom: 0.5rem;
+                        position: relative;
+                        z-index: 1;
+                        color: white;
+                    ">${msg.title}</h3>
+                    <p style="
+                        color: rgba(255,255,255,0.9);
+                        position: relative;
+                        z-index: 1;
+                        max-width: 300px;
+                    ">${msg.desc}</p>
+                </div>
             `;
-            content.parentElement.style.background = msg.bg;
         }
     }
 
@@ -113,7 +152,6 @@ export function initAnimations() {
         }
         animateRing();
 
-        // Enlarge ring on interactive elements
         document.querySelectorAll('a, button, .gallery-item, .showcase-tab, .feature-btn').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 ring.style.width = '56px';
